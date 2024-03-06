@@ -15,6 +15,9 @@ route = getenv('FIREBASE_DIR')
 cred = credentials.Certificate(route)
 firebase_admin.initialize_app(cred)
 
+# Obtener la fecha actual 
+from datetime import datetime
+
 def alarm_is_on(idsector:str = 5) -> dict:
     """
     idsector -> str -> Sector al que se va a escuchar
@@ -32,18 +35,39 @@ def alarm_is_on(idsector:str = 5) -> dict:
     items = [ item.to_dict() for item in result ]
 
     try:
-        if items[0]['sirena'] == '1' or items[0]['sirena'] == 1:
+        # Verificamos si es un valor reciente o no 
+        # Verificamos si la sirena se debe encender
+        # if items[0]['sirena'] == '1' or items[0]['sirena'] == 1:
+        if items[0]['nusuario'] == 'ALEXIS BALSECA':
             output = True
         else:
             output = False
 
     except Exception as e:
         output = "No key Sirena"
+
+
+    # Hora servidor
+    fecha = items[0]['fechahora']
+    # Hora del sistema
+    now = datetime.now(fecha.tzinfo)
+    # Calculamos la diferencia entre las fechas
+    diff = now - fecha
+
+    # Si la diferencia es inferior a 20 segundos, is_now será True, de lo contrario False
+    is_new = diff.total_seconds() <= 20
         
     return {
-        "alarm": output
+        "alarm": output,
+        "is_new": is_new,
+        "alarm_time": fecha,
+        "server_time": now,
+        "time_difference": diff
     }
 
 
 if __name__ == "__main__":
-    print(alarm_is_on(5))
+    import time
+    while True:
+        print(alarm_is_on(5))
+        time.sleep(5)
