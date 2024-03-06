@@ -36,9 +36,7 @@ def alarm_is_on(idsector:str = 5) -> dict:
 
     try:
         # Verificamos si es un valor reciente o no 
-        # Verificamos si la sirena se debe encender
-        # if items[0]['sirena'] == '1' or items[0]['sirena'] == 1:
-        if items[0]['nusuario'] == 'ALEXIS BALSECA':
+        if items[0]['sirena'] == '1' or items[0]['sirena'] == 1:
             output = True
         else:
             output = False
