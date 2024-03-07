@@ -7,18 +7,18 @@
 #include <addons/TokenHelper.h>
 
 /* 1. Define las credenciales WiFi */
-#define WIFI_SSID "TECNICO"
-#define WIFI_PASSWORD "DTC.2020"
+#define WIFI_SSID ""
+#define WIFI_PASSWORD ""
 
 /* 2. Define la clave API */
-#define API_KEY "AIzaSyC9z0EztdH5ffxWuhDALmrpxyECBoiEUgg"
+#define API_KEY ""
 
 /* 3. Define el ID del proyecto */
-#define FIREBASE_PROJECT_ID "prueba-prueba-only"
+#define FIREBASE_PROJECT_ID ""
 
 /* 4. Define el correo electrónico y la contraseña del usuario que ya está registrado o agregado en tu proyecto */
-#define USER_EMAIL "jorge.arguello1999@gmail.com"
-#define USER_PASSWORD "prueba123"
+#define USER_EMAIL ""
+#define USER_PASSWORD ""
 
 // Define el objeto de datos de Firebase
 FirebaseData fbdo;
