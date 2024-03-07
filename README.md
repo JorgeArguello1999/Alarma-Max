@@ -1,27 +1,25 @@
 # Alarma-Max
 
-Este proyecto crea una API REST con `FASTAPI` y con `Firebase Firestore` que tiene finalidad devolver el estado de una alarma que sera consumida a través de `ESP32`
+Codigo de `ESP32` para poder conectarse a `Firebase` con la librearía `Firebase_ESP_Client`.
 
-# FASTAPI (Python)
-Primero vamos a instalar las dependencias:
-```bash
-pip install -r requeriments.txt
-``` 
+Este proyecto busca encender una sirena, o cualquier otro dispositivo a través de Firebase.
 
-También debemos tener nuestro archivo `JSON` de `Firebase` que esta en la ruta `.tokens/`:
-```
-├── firebase.py
-├── main.py
-├── README.md
-├── requirements.txt
-└── tokens
-    └── alarm-max.json -> JSON Credencial
-```
+## Librerias de Arduino
+ - Firebase_ESP_Client (4.4.12 by mobizt)
+ - ArduinoJson (0.2 by Benoit)
 
-Deberemos crear un archivo `.env` el cual debemos tener la siguiente estructura:
-```bash
-FIREBASE_DIR=.tokens/alarm-max.json
-# La dirección debe apuntar a la ruta donde se encuentra tu JSON Credencial
-```
+## Prototipo (Imagen)
+> Las fuentes de poder son solo ejemplo.
+![Prototipo](images/Prototipo.png)
 
-# Arduino
+### Materiales
+ - ESP32
+ - Modulo RELAY 12V
+ - Fuente de alimentación 5V (ESP32)
+ - Fuente de alimentación 12V (Sirena)
+
+## Esquema (Imagen)
+![Esquema](images/Esquemático.png)
+
+## PCB (Imagen)
+![PCB](images/PCB.png)
