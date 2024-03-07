@@ -68,3 +68,5 @@ En esta sección del código podemos configurar la duración de la Alarma.
 
 ## PCB (Imagen)
 ![PCB](images/PCB.png)
+
+> Para el diagrama utilizar la aplicación `Fritzing`
