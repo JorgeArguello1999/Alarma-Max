@@ -127,12 +127,19 @@ void loop() {
       }
 
       // Encendemos la alarma
-      if(fecha != last_time && sirena == SIRENA){
+      if(fecha != last_time && sirena == SIRENA && last_time != ""){
         Serial.println("Encendido, " + fecha);
         last_time = fecha;
+        
+        // Encendemos la sirena
         digitalWrite(RELAY, HIGH);
         delay(20000);
         digitalWrite(RELAY, LOW);
+      }
+
+      if(last_time == ""){
+        last_time = fecha;
+        Serial.println("Cargando último registro: " + fecha);
       }
 
     } else {
